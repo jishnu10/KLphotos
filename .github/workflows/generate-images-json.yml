@@ -1,0 +1,29 @@
+name: Generate images.json
+
+on:
+  push:
+    paths:
+      - 'images/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate images.json
+      run: |
+        echo "Generating images.json"
+        cd images
+        ls | jq -R -s -c 'split("\n") | map(select(length > 0)) | {images: .}' > ../images.json
+
+    - name: Commit and push images.json
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add images.json
+        git commit -m 'Update images.json'
+        git push
