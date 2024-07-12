@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const imageContainer = document.getElementById('image-container');
-    const baseUrl = 'https://username.github.io/repository-name/images/'; // Replace with your GitHub Pages URL
+    const baseUrl = 'https://jishnu10.github.io/KLphotos/images/'; // Replace with your GitHub Pages URL
 
     const images = [];
     for (let i = 1; i <= 24; i++) { // Adjust the range if you have more images
