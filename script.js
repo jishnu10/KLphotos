@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const imageContainer = document.getElementById('image-container');
-    const baseUrl = 'https://jishnu10.github.io/KLphotos/images/'; // Replace with your GitHub Pages URL
+    const baseUrl = 'https://jishnu10.github.io/KLphotos1/images/'; // Replace with your GitHub Pages URL
 
     // URL to the JSON file
-    const jsonUrl = 'https://jishnu10.github.io/KLphotos/images.json'; // Replace with your GitHub Pages URL
+    const jsonUrl = 'https://jishnu10.github.io/KLphotos1/images.json'; // Replace with your GitHub Pages URL
 
     fetch(jsonUrl)
         .then(response => response.json())
