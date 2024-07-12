@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const imageContainer = document.getElementById('image-container');
-    const baseUrl = 'https://jishnu10.github.io/KLphotos/images/'; // Replace with your GitHub Pages URL
-
-    // URL to the JSON file
-    const jsonUrl = 'https://jishnu10.github.io/KLphotos/images.json'; // Replace with your GitHub Pages URL
+    const baseUrl = 'https://jishnu10.github.io/KLphotos/images/';
+    const jsonUrl = 'https://jishnu10.github.io/KLphotos/images.json';
 
     fetch(jsonUrl)
         .then(response => {
@@ -23,8 +21,5 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => {
             console.error('Error fetching images:', error);
-            const errorMessage = document.createElement('p');
-            errorMessage.textContent = `Error fetching images: ${error.message}`;
-            imageContainer.appendChild(errorMessage);
         });
 });
