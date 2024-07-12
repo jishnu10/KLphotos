@@ -14,11 +14,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
     - name: Generate images.json
       run: |
-        echo "Generating images.json"
-        cd images
-        ls | jq -R -s -c 'split("\n") | map(select(length > 0)) | {images: .}' > ../images.json
+        python generate_images_json.py
 
     - name: Commit and push images.json
       run: |
